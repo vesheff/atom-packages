@@ -92,9 +92,37 @@
 
 11. [atom-ternjs](https://github.com/tststs/atom-ternjs)
 
-    Essential package for intellisense.
+    Package for intelligence. You can configure your project from Аtom packages menu (as shown below) but it is not so flexible. It is essential to configure `loadEagerly` or `dontLoad` properties if you are working on a big project. node_modules folder contains many js files and you can find yourself in trouble if you don't remove it from tern config. Plugins could be managed only in the config file for now.
 
-    **Will be updated later with config file and usage instaructions.**
+    ![tern](./imgs/tern-config.png)
+
+    ```
+    {
+      "ecmaVersion": 6,
+      "libs": [
+        "browser",
+        "jquery"
+      ],
+      "loadEagerly": [
+        "path/to/your/js/**/*.js"
+      ],
+      "dontLoad": [
+        "path/to/your/js/**/*.js"
+      ],
+      "plugins": {
+        "complete_strings": {},
+        "node": {},
+        "lint": {},
+        "angular": {},
+        "requirejs": {},
+        "modules": {},
+        "es_modules": {},
+        "doc_comment": {
+          "fullDocs": true
+        }
+      }
+    }
+    ```
 
 ## Fancy stuff
 
